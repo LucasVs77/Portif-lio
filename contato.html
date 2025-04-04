@@ -4,253 +4,254 @@
 <!-- Define o idioma da página como português do Brasil -->
 
 <head>
-    <!-- Cabeçalho do documento - contém metadados e links para recursos -->
-    <meta charset="UTF-8">
-    <!-- Define o encoding de caracteres como UTF-8 (suporta acentuação) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Configura a viewport para responsividade em dispositivos móveis -->
-    <title>Página de Contato</title>
-    <!-- Título que aparece na aba do navegador -->
+    <!-- METADADOS -->
+    <meta charset="UTF-8"> <!-- Codificação de caracteres UTF-8 para suportar acentos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade para dispositivos móveis -->
+    <title>Página de Contato</title> <!-- Título mostrado na aba do navegador -->
 
     <style>
-        /* Estilos CSS para toda a página */
-
-        /* Estilos gerais do corpo da página */
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            /* Fonte principal */
-            line-height: 1.6;
-            /* Espaçamento entre linhas */
-            max-width: 800px;
-            /* Largura máxima do conteúdo */
-            margin: 0 auto;
-            /* Centraliza o conteúdo na página */
-            padding: 20px;
-            /* Espaçamento interno */
-
-            background-color: #151515;
-            color:#FF6B00;
-            
+        /* RESET CSS - Remove margens e paddings padrão de todos elementos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Faz padding e border serem incluídos no cálculo de tamanho */
         }
 
-        /* Estilo para o título principal */
+        /* ESTILOS GERAIS DO BODY */
+        body {
+            font-family: 'Segoe UI', sans-serif; /* Fonte principal */
+            line-height: 1.6; /* Espaçamento entre linhas */
+            background-color: #151515; /* Cor de fundo escura */
+            padding-top: 50px; /* Espaço para o menu fixo não cobrir conteúdo */
+            color: white; /* Cor padrão do texto */
+        }
+
+        /* CONTAINER PRINCIPAL DO CONTEÚDO */
+        .content-container {
+            max-width: 800px; /* Largura máxima do conteúdo */
+            margin: 0 auto; /* Centraliza na página */
+            padding: 20px; /* Espaçamento interno */
+        }
+
+        /* MENU FIXO NO TOPO */
+        .menu-container {
+            position: fixed; /* Fixa o menu no topo */
+            top: 0; /* Cola no topo da tela */
+            left: 0; /* Alinha à esquerda */
+            width: 100%; /* Ocupa toda a largura */
+            background-color: #696969; /* Cor de fundo cinza */
+            z-index: 1000; /* Garante que fique acima de outros elementos */
+            height: 50px; /* Altura compacta do menu */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
+        }
+
+        /* CONTAINER DOS LINKS DO MENU */
+        .menu {
+            max-width: 800px; /* Mesma largura do conteúdo */
+            margin: 0 auto; /* Centraliza */
+            display: flex; /* Layout flexível */
+            height: 100%; /* Ocupa toda altura do container */
+        }
+
+        /* ESTILOS DOS LINKS DO MENU */
+        .menu a {
+            color: aliceblue; /* Cor do texto */
+            text-align: center; /* Texto centralizado */
+            padding: 10px 16px; /* Espaçamento interno reduzido */
+            text-decoration: none; /* Remove sublinhado */
+            font-size: 16px; /* Tamanho de fonte */
+            flex: 1; /* Distribui espaço igualmente */
+            transition: all 0.3s ease; /* Transição suave para hover */
+            display: flex; /* Flex para melhor alinhamento */
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            height: 100%; /* Ocupa toda altura */
+        }
+
+        /* EFEITO HOVER NOS LINKS */
+        .menu a:hover {
+            background-color: #ffffff; /* Fundo branco */
+            color: black; /* Texto preto */
+        }
+
+        /* LINK ATIVO/ATUAL */
+        .menu a.ativo {
+            background-color: #e69e19; /* Laranja destacado */
+            color: white; /* Texto branco */
+        }
+
+        /* ESTILOS DE TÍTULOS */
         h1 {
-            color:#FF6B00;
-            /* Cor do texto */
-            text-align: center;
-            /* Centraliza o texto */
+            color: #FF6B00; /* Laranja */
+            text-align: center; /* Centralizado */
+            margin-bottom: 20px; /* Espaço abaixo */
         }
 
         h2 {
-            color:#FF6B00;
+            color: #FF6B00; /* Laranja */
+            margin-bottom: 15px; /* Espaço abaixo */
         }
 
-        /* Estilo para as seções de formulário */
+        /* ESTILOS DE FORMULÁRIOS */
         .contact-form,
         .feedback {
-            background-color: rgb(78, 72, 72);
-            /* Cor de fundo */
-            padding: 20px;
-            /* Espaçamento interno */
-            border-radius: 8px;
-            /* Bordas arredondadas */
-            margin-bottom: 20px;
-            /* Margem na parte inferior */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            /* Sombra sutil */
+            background-color: rgb(46, 41, 41); /* Fundo cinza escuro */
+            padding: 20px; /* Espaçamento interno */
+            border-radius: 8px; /* Cantos arredondados */
+            margin-bottom: 20px; /* Espaço entre seções */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
         }
 
-        /* Estilo para grupos de elementos do formulário */
+        /* GRUPOS DE FORMULÁRIO */
         .form-group {
-            margin-bottom: 15px;
-            /* Espaço entre cada grupo */
-            color:#FF6B00;
+            margin-bottom: 15px; /* Espaço entre grupos */
+            color: #FF6B00; /* Texto laranja */
         }
 
-        /* Estilo para as labels dos campos */
+        /* LABELS DOS CAMPOS */
         label {
-            display: block;
-            /* Faz a label ocupar toda a linha */
-            margin-bottom: 5px;
-            /* Espaço abaixo da label */
-            font-weight: bold;
-            /* Texto em negrito */
+            display: block; /* Ocupa linha inteira */
+            margin-bottom: 5px; /* Espaço abaixo */
+            font-weight: bold; /* Texto em negrito */
         }
 
-        /* Estilo para campos de texto, email e textarea */
+        /* CAMPOS DE ENTRADA */
         input[type="text"],
         input[type="email"],
         textarea {
-            width: 100%;
-            /* Largura total do container */
-            padding: 10px;
-            /* Espaçamento interno */
-            border: 1px solid #ddd;
-            /* Borda sutil */
-            border-radius: 4px;
-            /* Bordas levemente arredondadas */
-            box-sizing: border-box;
-            /* Inclui padding na largura total */
+            width: 100%; /* Largura total */
+            padding: 10px; /* Espaçamento interno */
+            border: 1px solid #ddd; /* Borda sutil */
+            border-radius: 4px; /* Cantos arredondados */
+            box-sizing: border-box; /* Modelo de caixa consistente */
+            background-color: #333; /* Fundo escuro */
+            color: white; /* Texto branco */
         }
 
-        /* Estilo específico para textarea */
+        /* TEXTAREA ESPECÍFICO */
         textarea {
-            height: 150px;
-            /* Altura inicial */
-            resize: vertical;
-            /* Permite redimensionar apenas verticalmente */
+            height: 150px; /* Altura inicial */
+            resize: vertical; /* Permite redimensionar apenas verticalmente */
         }
 
-        /* Estilo para botões */
+        /* BOTÕES */
         button {
-            background-color: #3498db;
-            /* Cor de fundo azul */
-            color: white;
-            /* Texto branco */
-            border: none;
-            /* Remove borda padrão */
-            padding: 10px 20px;
-            /* Espaçamento interno */
-            border-radius: 4px;
-            /* Bordas arredondadas */
-            cursor: pointer;
-            /* Cursor vira mãozinha ao passar */
-            font-size: 16px;
-            /* Tamanho da fonte */
+            background-color: #3498db; /* Azul */
+            color: white; /* Texto branco */
+            border: none; /* Sem borda */
+            padding: 10px 20px; /* Espaçamento interno */
+            border-radius: 4px; /* Cantos arredondados */
+            cursor: pointer; /* Cursor de mão */
+            font-size: 16px; /* Tamanho da fonte */
+            transition: background-color 0.3s; /* Transição suave */
         }
 
-        /* Efeito hover para botões */
+        /* EFEITO HOVER NOS BOTÕES */
         button:hover {
-            background-color: #2980b9;
-            /* Cor mais escura ao passar o mouse */
+            background-color: #2980b9; /* Azul mais escuro */
         }
 
-        /* Estilo para o grupo de radio buttons */
+        /* GRUPO DE RADIO BUTTONS */
         .radio-group {
-            display: flex;
-            /* Disposição em linha */
-            gap: 15px;
-            /* Espaço entre os itens */
-            margin-top: 10px;
-            /* Espaço acima do grupo */
+            display: flex; /* Disposição em linha */
+            gap: 15px; /* Espaço entre itens */
+            margin-top: 10px; /* Espaço acima */
         }
 
-        /* Estilo para cada opção do radio button */
+        /* OPÇÕES DE RADIO */
         .radio-option {
-            display: flex;
-            /* Disposição em linha */
-            align-items: center;
-            /* Alinha itens verticalmente */
+            display: flex; /* Alinhamento interno */
+            align-items: center; /* Centraliza verticalmente */
         }
 
-        /* Espaço entre o radio button e seu label */
+        /* ESPAÇO ENTRE RADIO E LABEL */
         .radio-option input {
-            margin-right: 5px;
+            margin-right: 5px; /* Espaçamento */
         }
 
-        a {
-            margin-right: 15%
-        }
-
+        /* LINK DE VOLTAR */
         .center-link {
-            text-align: center;
-            margin-top: 15px;
+            text-align: center; /* Centralizado */
+            margin-top: 15px; /* Espaço acima */
         }
 
         .center-link a {
-            color:#FF6B00;
-            text-decoration: none;
+            color: #FF6B00; /* Laranja */
+            text-decoration: none; /* Sem sublinhado */
         }
     </style>
 </head>
 
 <body>
-    <!-- Corpo da página - conteúdo visível -->
+    <!-- MENU PRINCIPAL FIXO -->
+    <nav class="menu-container">
+        <div class="menu">
+            <a href="menu.html">Início</a>
+            <a href="página2.html">Esportes</a>
+            <a href="página3.html">Futuro</a>
+            <a href="página4.html">Certificado</a>
+            <a href="página5.html">Áreas de interesse</a>
+            <a class="ativo" href="contato.html">Contato</a>
+        </div>
+    </nav>
 
-    <h1>Entre em Contato</h1>
-    <!-- Título principal da página -->
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="content-container">
+        <h1>Entre em Contato</h1>
 
-    <!-- Seção do formulário de contato -->
-    <div class="contact-form">
-        <h2>Envie sua mensagem</h2>
-
-        <!-- Formulário com método post (seria enviado para um servidor) -->
-        <form action="#" method="post">
-            <!-- Grupo para o campo nome -->
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-                <!-- Campo obrigatório (required) -->
-            </div>
-
-            <!-- Grupo para o campo email -->
-            <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-                <!-- type="email" valida formato básico de email -->
-            </div>
-
-            <!-- Grupo para o campo assunto -->
-            <div class="form-group">
-                <label for="assunto">Assunto:</label>
-                <input type="text" id="assunto" name="assunto" required>
-            </div>
-
-            <!-- Grupo para o campo mensagem -->
-            <div class="form-group">
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" required></textarea>
-            </div>
-
-            <!-- Botão de submit para enviar o formulário -->
-            <button type="submit">Enviar Mensagem</button>
-
-        </form>
-    </div>
-
-    <!-- Seção de feedback -->
-    <div class="feedback">
-        <h2>Feedback</h2>
-        <p>Você gostou da minha página?</p>
-
-        <!-- Formulário de feedback -->
-        <form action="#" method="post">
-            <!-- Grupo de radio buttons -->
-            <div class="radio-group">
-                <!-- Opção "Sim" -->
-                <div class="radio-option">
-                    <input type="radio" id="gostou-sim" name="gostou" value="sim" required>
-                    <label for="gostou-sim">Sim</label>
+        <!-- FORMULÁRIO DE CONTATO -->
+        <div class="contact-form">
+            <h2>Envie sua mensagem</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
                 </div>
-
-                <!-- Opção "Não" -->
-                <div class="radio-option">
-                    <input type="radio" id="gostou-nao" name="gostou" value="nao">
-                    <label for="gostou-nao">Não</label>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-
-                <!-- Opção "Indiferente" -->
-                <div class="radio-option">
-                    <input type="radio" id="gostou-indiferente" name="gostou" value="indiferente">
-                    <label for="gostou-indiferente">Indiferente</label>
+                <div class="form-group">
+                    <label for="assunto">Assunto:</label>
+                    <input type="text" id="assunto" name="assunto" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
 
-            <!-- Campo opcional para comentários -->
-            <div class="form-group" style="margin-top: 15px;">
-                <label for="comentario">Comentários (opcional):</label>
-                <textarea id="comentario" name="comentario" rows="3"></textarea>
-            </div>
-
-            <!-- Botão de submit para o feedback -->
-            <button type="submit">Enviar Feedback</button>
-
-
-            <div class="center-link">
-                <a href="port.html">Voltar à página inicial</a>
-            </div>
-        </form>
+        <!-- SEÇÃO DE FEEDBACK -->
+        <div class="feedback">
+            <h2>Feedback</h2>
+            <p>Você gostou da minha página?</p>
+            <form action="#" method="post">
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="gostou-sim" name="gostou" value="sim" required>
+                        <label for="gostou-sim">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="gostou-nao" name="gostou" value="nao">
+                        <label for="gostou-nao">Não</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="gostou-indiferente" name="gostou" value="indiferente">
+                        <label for="gostou-indiferente">Indiferente</label>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label for="comentario">Comentários (opcional):</label>
+                    <textarea id="comentario" name="comentario" rows="3"></textarea>
+                </div>
+                <button type="submit">Enviar Feedback</button>
+                <div class="center-link">
+                    <a href="menu.html">Voltar à página inicial</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
-
 </html>
