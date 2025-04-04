@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!-- Define o tipo de documento como HTML5 -->
+<html lang="pt-br">
+<!-- Define o idioma da página como português do Brasil -->
+
+<head>
+    <!-- Cabeçalho do documento - contém metadados e links para recursos -->
+    <meta charset="UTF-8">
+    <!-- Define o encoding de caracteres como UTF-8 (suporta acentuação) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a viewport para responsividade em dispositivos móveis -->
+    <title>Página de Contato</title>
+    <!-- Título que aparece na aba do navegador -->
+
+    <style>
+        /* Estilos CSS para toda a página */
+
+        /* Estilos gerais do corpo da página */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            /* Fonte principal */
+            line-height: 1.6;
+            /* Espaçamento entre linhas */
+            max-width: 800px;
+            /* Largura máxima do conteúdo */
+            margin: 0 auto;
+            /* Centraliza o conteúdo na página */
+            padding: 20px;
+            /* Espaçamento interno */
+
+            background-color: #151515;
+            color:#FF6B00;
+            
+        }
+
+        /* Estilo para o título principal */
+        h1 {
+            color:#FF6B00;
+            /* Cor do texto */
+            text-align: center;
+            /* Centraliza o texto */
+        }
+
+        h2 {
+            color:#FF6B00;
+        }
+
+        /* Estilo para as seções de formulário */
+        .contact-form,
+        .feedback {
+            background-color: rgb(78, 72, 72);
+            /* Cor de fundo */
+            padding: 20px;
+            /* Espaçamento interno */
+            border-radius: 8px;
+            /* Bordas arredondadas */
+            margin-bottom: 20px;
+            /* Margem na parte inferior */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Sombra sutil */
+        }
+
+        /* Estilo para grupos de elementos do formulário */
+        .form-group {
+            margin-bottom: 15px;
+            /* Espaço entre cada grupo */
+            color:#FF6B00;
+        }
+
+        /* Estilo para as labels dos campos */
+        label {
+            display: block;
+            /* Faz a label ocupar toda a linha */
+            margin-bottom: 5px;
+            /* Espaço abaixo da label */
+            font-weight: bold;
+            /* Texto em negrito */
+        }
+
+        /* Estilo para campos de texto, email e textarea */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            /* Largura total do container */
+            padding: 10px;
+            /* Espaçamento interno */
+            border: 1px solid #ddd;
+            /* Borda sutil */
+            border-radius: 4px;
+            /* Bordas levemente arredondadas */
+            box-sizing: border-box;
+            /* Inclui padding na largura total */
+        }
+
+        /* Estilo específico para textarea */
+        textarea {
+            height: 150px;
+            /* Altura inicial */
+            resize: vertical;
+            /* Permite redimensionar apenas verticalmente */
+        }
+
+        /* Estilo para botões */
+        button {
+            background-color: #3498db;
+            /* Cor de fundo azul */
+            color: white;
+            /* Texto branco */
+            border: none;
+            /* Remove borda padrão */
+            padding: 10px 20px;
+            /* Espaçamento interno */
+            border-radius: 4px;
+            /* Bordas arredondadas */
+            cursor: pointer;
+            /* Cursor vira mãozinha ao passar */
+            font-size: 16px;
+            /* Tamanho da fonte */
+        }
+
+        /* Efeito hover para botões */
+        button:hover {
+            background-color: #2980b9;
+            /* Cor mais escura ao passar o mouse */
+        }
+
+        /* Estilo para o grupo de radio buttons */
+        .radio-group {
+            display: flex;
+            /* Disposição em linha */
+            gap: 15px;
+            /* Espaço entre os itens */
+            margin-top: 10px;
+            /* Espaço acima do grupo */
+        }
+
+        /* Estilo para cada opção do radio button */
+        .radio-option {
+            display: flex;
+            /* Disposição em linha */
+            align-items: center;
+            /* Alinha itens verticalmente */
+        }
+
+        /* Espaço entre o radio button e seu label */
+        .radio-option input {
+            margin-right: 5px;
+        }
+
+        a {
+            margin-right: 15%
+        }
+
+        .center-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .center-link a {
+            color:#FF6B00;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Corpo da página - conteúdo visível -->
+
+    <h1>Entre em Contato</h1>
+    <!-- Título principal da página -->
+
+    <!-- Seção do formulário de contato -->
+    <div class="contact-form">
+        <h2>Envie sua mensagem</h2>
+
+        <!-- Formulário com método post (seria enviado para um servidor) -->
+        <form action="#" method="post">
+            <!-- Grupo para o campo nome -->
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <!-- Campo obrigatório (required) -->
+            </div>
+
+            <!-- Grupo para o campo email -->
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <!-- type="email" valida formato básico de email -->
+            </div>
+
+            <!-- Grupo para o campo assunto -->
+            <div class="form-group">
+                <label for="assunto">Assunto:</label>
+                <input type="text" id="assunto" name="assunto" required>
+            </div>
+
+            <!-- Grupo para o campo mensagem -->
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+            </div>
+
+            <!-- Botão de submit para enviar o formulário -->
+            <button type="submit">Enviar Mensagem</button>
+
+        </form>
+    </div>
+
+    <!-- Seção de feedback -->
+    <div class="feedback">
+        <h2>Feedback</h2>
+        <p>Você gostou da minha página?</p>
+
+        <!-- Formulário de feedback -->
+        <form action="#" method="post">
+            <!-- Grupo de radio buttons -->
+            <div class="radio-group">
+                <!-- Opção "Sim" -->
+                <div class="radio-option">
+                    <input type="radio" id="gostou-sim" name="gostou" value="sim" required>
+                    <label for="gostou-sim">Sim</label>
+                </div>
+
+                <!-- Opção "Não" -->
+                <div class="radio-option">
+                    <input type="radio" id="gostou-nao" name="gostou" value="nao">
+                    <label for="gostou-nao">Não</label>
+                </div>
+
+                <!-- Opção "Indiferente" -->
+                <div class="radio-option">
+                    <input type="radio" id="gostou-indiferente" name="gostou" value="indiferente">
+                    <label for="gostou-indiferente">Indiferente</label>
+                </div>
+            </div>
+
+            <!-- Campo opcional para comentários -->
+            <div class="form-group" style="margin-top: 15px;">
+                <label for="comentario">Comentários (opcional):</label>
+                <textarea id="comentario" name="comentario" rows="3"></textarea>
+            </div>
+
+            <!-- Botão de submit para o feedback -->
+            <button type="submit">Enviar Feedback</button>
+
+
+            <div class="center-link">
+                <a href="port.html">Voltar à página inicial</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
